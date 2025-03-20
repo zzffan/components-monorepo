@@ -1,0 +1,59 @@
+{
+  "name": "@demo-mono-repo/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve:react-demo": "PORT=3333 npx nx serve react-demo",
+    "build:comp": "npx nx run @demo-mono-repo/react-components:build"
+  },
+  "private": true,
+  "dependencies": {
+    "ky": "^1.7.5",
+    "mobx": "^6.13.7",
+    "mobx-react": "^9.2.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@nx/js": "20.6.2",
+    "@nx/react": "^20.6.2",
+    "@nx/vite": "^20.6.2",
+    "@nx/web": "20.6.2",
+    "@swc-node/register": "~1.10.10",
+    "@swc/core": "~1.11.11",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "^22.13.10",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@vitest/ui": "^3.0.0",
+    "jiti": "2.4.2",
+    "jsdom": "~26.0.0",
+    "nx": "20.6.2",
+    "sass": "^1.55.0",
+    "tslib": "^2.3.0",
+    "typescript": "~5.8.2",
+    "verdaccio": "^6.0.5",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "~4.5.0",
+    "vitest": "^3.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "nx": {
+    "includedScripts": [],
+    "targets": {
+      "local-registry": {
+        "executor": "@nx/js:verdaccio",
+        "options": {
+          "port": 4873,
+          "config": ".verdaccio/config.yml",
+          "storage": "tmp/local-registry/storage"
+        }
+      }
+    }
+  }
+}
