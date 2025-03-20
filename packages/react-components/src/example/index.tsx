@@ -10,6 +10,3 @@ export function ReactComponents() {
 }
 
 export default ReactComponents;
-
-
-

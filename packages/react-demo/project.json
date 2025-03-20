@@ -1,0 +1,7 @@
+{
+  "targets": {
+    "serve": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

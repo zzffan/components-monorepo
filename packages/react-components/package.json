@@ -1,10 +1,29 @@
 {
-  "name": "@demo-mono-repo/react-components",
+  "name": "npmzzff/react-components",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "style": "./dist/style.css",
+  "files": [
+    "es",
+    "lib",
+    "dist",
+    "json"
+  ],
+  "peerDependencies": {
+    "ky": "^1.7.5",
+    "mobx": "^6.13.7",
+    "mobx-react": "^9.2.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "dependencies": {
+    "mobx": "^6.13.7",
+    "mobx-react": "^9.2.0",
+    "ky": "^1.7.5"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {

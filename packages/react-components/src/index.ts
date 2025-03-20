@@ -1,6 +1,6 @@
 
-import ReactComponents from './lib/react-components';
-import TtsDemo from './lib/tts/index';
+import ReactComponents from './example/index';
+import TtsDemo from './tts/index';
 
 const ReactComponent = ReactComponents();
 

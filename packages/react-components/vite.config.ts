@@ -1,8 +1,8 @@
 /// <reference types='vitest' />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dts from 'vite-plugin-dts';
-import * as path from 'path';
+import dts from "vite-plugin-dts";
+import * as path from "path";
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -10,8 +10,8 @@ export default defineConfig(() => ({
   plugins: [
     react(),
     dts({
-      entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      entryRoot: "src",
+      tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
     }),
   ],
   // Uncomment this if you are using workers.
@@ -27,24 +27,41 @@ export default defineConfig(() => ({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-    lib: {
-      // Could also be a dictionary or array of multiple entry points.
-      entry: "./src/index.ts",
-      name: "@npmzzff/react-components",
-      fileName: `index`
-      // formats: ['es', 'cjs']
-      // Change this to the formats you want to support.
-      // Don't forget to update your package.json as well.
-    },
+    cssCodeSplit: true,
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [
-        "react",
-        "react-dom"
+      external: ["react", "react-dom"],
+      output: [
+        // {
+        //     format: "es",
+        //     entryFileNames: "[name].js",
+        //     exports: "named",
+        //     name: "npmzzff/react-components",
+        //     dir: "./dist/dist",
+        // },
+        {
+            format: "es",
+            entryFileNames: "[name].js",
+            exports: "named",
+            preserveModules: true,
+            preserveModulesRoot: 'src',
+            dir: "./dist/es",
+        },
+        {
+            format: "cjs",
+            entryFileNames: "[name].js",
+            exports: "named",
+            preserveModules: true,
+            preserveModulesRoot: 'src',
+            dir: "./dist/lib",
+        }
       ],
-      output: {
-        globals: {},
-      },
     },
+    lib: {
+      entry: "./src/index.ts",
+      name: "npmzzff/react-components",
+      fileName: (format) => `npmzzff/react-components.${format}.js`,
+      formats: ['es', 'cjs']
+    }
   },
 }));

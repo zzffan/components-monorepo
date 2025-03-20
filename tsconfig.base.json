@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "emitDeclarationOnly": true,
     "importHelpers": true,
     "isolatedModules": true,
@@ -16,8 +16,10 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "outDir": "dist/types", // 指定输出目录
-    "rootDir": "src",       // 指定源文件目录
+    "paths": {
+      "react-components": ["./packages/react-components/src/index.ts"],
+      "react-demo": ["./packages/react-demo/src/main.tsx"]
+    }
   },
   "include": ["src"]
 }

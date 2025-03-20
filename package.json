@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve:react-demo": "PORT=3333 npx nx serve react-demo",
-    "build:comp": "npx nx run @demo-mono-repo/react-components:build"
+    "serve:react-demo": "npx nx serve react-demo --port=3333",
+    "build:comp": "npx nx run npmzzff/react-components:build"
   },
   "private": true,
   "dependencies": {
@@ -12,7 +12,8 @@
     "mobx": "^6.13.7",
     "mobx-react": "^9.2.0",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "rollup-plugin-css-only": "^4.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

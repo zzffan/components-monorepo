@@ -27,6 +27,10 @@
     "**/*.test.jsx"
   ],
   "include": [
-    "src/**/*.{js,jsx,ts,tsx}"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.d.ts"
   ]
 }
