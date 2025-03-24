@@ -1,25 +1,24 @@
 {
-  "name": "npmzzff/react-components",
+  "name": "react-components",
   "version": "0.0.1",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "style": "./dist/style.css",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "style": "./es/style.css",
   "files": [
     "es",
     "lib",
-    "dist",
-    "json"
+    "dist"
   ],
   "peerDependencies": {
     "ky": "^1.7.5",
     "mobx": "^6.13.7",
-    "mobx-react": "^9.2.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "mobx-react": "^9.2.0"
   },
-  "dependencies": {
+  "devDependencies": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "mobx": "^6.13.7",
     "mobx-react": "^9.2.0",
     "ky": "^1.7.5"
@@ -27,9 +26,9 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "default": "./es/index.js"
     }
   }
 }

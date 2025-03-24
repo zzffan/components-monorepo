@@ -1,7 +1,7 @@
-# npmzzff/react-components
+# react-components
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test npmzzff/react-components` to execute the unit tests via [Vitest](https://vitest.dev/).
+Run `nx test react-components` to execute the unit tests via [Vitest](https://vitest.dev/).

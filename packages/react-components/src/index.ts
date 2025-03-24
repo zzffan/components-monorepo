@@ -1,10 +1,4 @@
 
-import ReactComponents from './example/index';
-import TtsDemo from './tts/index';
+import * as components from './components'
 
-const ReactComponent = ReactComponents();
-
-export {
-    ReactComponent,
-    TtsDemo
-}
+export * from './components'

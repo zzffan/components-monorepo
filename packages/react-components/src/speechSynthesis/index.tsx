@@ -13,7 +13,7 @@ interface IProps {
     word?: string;
 }
 
-const TtsDemo: React.FC<IProps> = observer((props) => {
+const SpeechSynthesis: React.FC<IProps> = observer((props) => {
     const [store] = useState(() => PersonStore);
     const {word} = props;
 
@@ -30,4 +30,4 @@ const TtsDemo: React.FC<IProps> = observer((props) => {
     )
 })
 
-export default TtsDemo;
+export default SpeechSynthesis;

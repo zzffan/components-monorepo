@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "serve:react-demo": "npx nx serve react-demo --port=3333",
-    "build:comp": "npx nx run npmzzff/react-components:build"
+    "build:comp": "npx nx run react-components:build"
   },
   "private": true,
   "dependencies": {

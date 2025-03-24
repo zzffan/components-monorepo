@@ -1,51 +1,40 @@
-/// <reference types='vitest' />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import * as path from "path";
 
 export default defineConfig(() => ({
-  root: __dirname,
-  cacheDir: "../../node_modules/.vite/packages/react-components",
+//   root: __dirname,
+//   cacheDir: "../../node_modules/.vite/packages/react-components",
   plugins: [
     react(),
-    dts({
-      entryRoot: "src",
-      tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
-    }),
+    // dts({
+    //   entryRoot: "src",
+    //   tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
+    // }),
+    dts()
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
-  // Configuration for building your library.
-  // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: "./dist",
+    target: "modules",
+    // outDir: "es",
+    minify: false,
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-    cssCodeSplit: true,
+    sourcemap: false,
+    // cssCodeSplit: true,
     rollupOptions: {
-      // External packages that should not be bundled into your library.
-      external: ["react", "react-dom"],
+      external: ['react', 'react-dom', 'ky', 'mobx', 'mobx-react', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+      input: ['src/index.ts'],
       output: [
-        // {
-        //     format: "es",
-        //     entryFileNames: "[name].js",
-        //     exports: "named",
-        //     name: "npmzzff/react-components",
-        //     dir: "./dist/dist",
-        // },
         {
             format: "es",
             entryFileNames: "[name].js",
-            exports: "named",
             preserveModules: true,
             preserveModulesRoot: 'src',
-            dir: "./dist/es",
+            dir: "es",
         },
         {
             format: "cjs",
@@ -53,14 +42,14 @@ export default defineConfig(() => ({
             exports: "named",
             preserveModules: true,
             preserveModulesRoot: 'src',
-            dir: "./dist/lib",
+            dir: "lib",
         }
       ],
     },
     lib: {
       entry: "./src/index.ts",
-      name: "npmzzff/react-components",
-      fileName: (format) => `npmzzff/react-components.${format}.js`,
+      name: "react-components",
+      fileName: (format) => `react-components.${format}.js`,
       formats: ['es', 'cjs']
     }
   },

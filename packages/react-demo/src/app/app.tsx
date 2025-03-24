@@ -1,14 +1,14 @@
 // Uncomment this line to use CSS modules
 import styles from './app.module.scss';
 import NxWelcome from "./nx-welcome";
-import {TtsDemo} from 'npmzzff/react-components';
+import {SpeechSynthesis} from 'react-components';
 
 export function App() {
 
   return (
     <div>
       <div className={styles.testContainer}>
-        <TtsDemo word="~~~这是穿进去的参数~~~"></TtsDemo>
+        <SpeechSynthesis word="~~~这是穿进去的参数~~~"></SpeechSynthesis>
       </div>
       <NxWelcome title="@demo-mono-repo/react-demo"/>
     </div>
