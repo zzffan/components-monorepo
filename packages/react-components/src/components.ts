@@ -1,1 +1,1 @@
-export { default as SpeechSynthesis } from './speechSynthesis'
+export { default as SpeechSynthesis } from './speechSynthesis';

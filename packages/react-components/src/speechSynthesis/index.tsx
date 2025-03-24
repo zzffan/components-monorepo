@@ -1,5 +1,5 @@
 // basic
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {observer} from 'mobx-react';
 
 // styles
@@ -7,6 +7,9 @@ import cls from './index.module.scss';
 
 // stores
 import PersonStore from './controller';
+
+// utils
+import {compApiClient} from '../utils/request';
 
 // Props
 interface IProps {
@@ -16,6 +19,17 @@ interface IProps {
 const SpeechSynthesis: React.FC<IProps> = observer((props) => {
     const [store] = useState(() => PersonStore);
     const {word} = props;
+
+    useEffect(() => {
+        compApiClient
+            .get('http://ai-eng.bcc-bdbl.baidu.com:8088/platform/page/json?requestUrl=/console/ai-engine/speech/experience-center')
+            .then(res => {
+                console.log('res: ', res);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, [])
 
     return (
         <>

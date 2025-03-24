@@ -2,6 +2,7 @@
 import styles from './app.module.scss';
 import NxWelcome from "./nx-welcome";
 import {SpeechSynthesis} from 'react-components';
+import 'react-components/style.css'
 
 export function App() {
 

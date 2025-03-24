@@ -29,6 +29,7 @@
       "types": "./es/index.d.ts",
       "import": "./es/index.js",
       "default": "./es/index.js"
-    }
+    },
+    "./style.css": "./es/style.css"
   }
 }
